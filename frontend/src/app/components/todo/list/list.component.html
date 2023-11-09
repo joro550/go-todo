@@ -1,0 +1,96 @@
+<app-todo-modal-view
+  [item]='viewingItem'
+  [(shouldShow)]='shouldShow'>
+</app-todo-modal-view>
+
+<div cdkDropListGroup>
+  <div class='md:flex'>
+
+    <div class='w-full p-3 bg-slate-500'>
+      <h1>In progress</h1>
+      <div
+        class='p-5 bg-slate-100 m-3 rounded-lg'
+        #todoList="cdkDropList"
+        cdkDropList
+        [cdkDropListData]="inProgressTodo"
+        (cdkDropListDropped)="drop($event)">
+
+        <div
+          *ngFor="let todo of inProgressTodo"
+          cdkDrag
+        >
+          <div class='p-3 m-2 bg-red-100 rounded-lg shadow-lg'>
+            <div class='text-lg'>{{todo.title}}</div>
+            <div>{{todo.description}}</div>
+            <button (click)='showModal(this.todo)' class='bg-blue-300 p-3 rounded-lg'>View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='w-full p-3 bg-slate-500'>
+      <h1>Done</h1>
+      <div
+        class='p-5 bg-slate-100 m-3 rounded-lg'
+        #completedList="cdkDropList"
+        cdkDropList
+        [cdkDropListData]="completedTodo"
+        (cdkDropListDropped)="drop($event)">
+        <div
+          *ngFor="let todo of completedTodo"
+          cdkDrag
+        >
+          <div class='p-3 m-2 bg-red-100 rounded-lg shadow-lg'>
+            <div class='text-lg'>{{todo.title}}</div>
+            <div>{{todo.description}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='w-full p-3'>
+      <h1>Done</h1>
+      <div
+        class='p-5 bg-slate-100 m-3 rounded-lg'
+        #completedList="cdkDropList"
+        cdkDropList
+        [cdkDropListData]="completedTodo"
+        (cdkDropListDropped)="drop($event)">
+        <div
+          *ngFor="let todo of completedTodo"
+          cdkDrag
+        >
+          <div class='p-3 m-2 bg-red-100 rounded-lg shadow-lg'>
+            <div class='text-lg'>{{todo.title}}</div>
+            <div>{{todo.description}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class='w-full p-3'>
+      <h1>Done</h1>
+      <div
+        class='p-5 bg-slate-100 m-3 rounded-lg'
+        #completedList="cdkDropList"
+        cdkDropList
+        [cdkDropListData]="completedTodo"
+        (cdkDropListDropped)="drop($event)">
+        <div
+          *ngFor="let todo of completedTodo"
+          cdkDrag
+        >
+          <div class='p-3 m-2 bg-red-100 rounded-lg shadow-lg'>
+            <div class='text-lg'>{{todo.title}}</div>
+            <div>{{todo.description}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
