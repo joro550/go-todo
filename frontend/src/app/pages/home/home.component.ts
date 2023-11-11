@@ -3,8 +3,13 @@ import { Todo, TodoService } from 'src/app/todo.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  // templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  template: `
+  <app-todo-add (toDoCreated)='todoCreated()'></app-todo-add>
+  <app-todo-list></app-todo-list>
+
+`
 })
 export class HomeComponent implements OnInit {
   // todos : Todo[] = [];

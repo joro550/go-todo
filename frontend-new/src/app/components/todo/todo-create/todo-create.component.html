@@ -1,0 +1,16 @@
+<div class='bg-slate-200 m-2 rounded-lg shadow-lg p-2.5'>
+  <div class=''>
+    <div class='mb-6'>
+      <label for='title' class='block mb-2 text-sm font-medium text-gray-900'>Title</label>
+      <input id='title' [(ngModel)]='todo.title' class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'/>
+    </div>
+
+    <div class='mb-6'>
+      <label for='description' class='block mb-2 text-sm font-medium text-gray-900'>Description</label>
+      <input id='description' [(ngModel)]='todo.description' class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'/>
+    </div>
+
+    <button (click)='create()' class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Save</button>
+  </div>
+</div>
+

@@ -15,16 +15,15 @@
         [cdkDropListData]="inProgressTodo"
         (cdkDropListDropped)="drop($event)">
 
-        <div
-          *ngFor="let todo of inProgressTodo"
-          cdkDrag
-        >
-          <div class='p-3 m-2 bg-red-100 rounded-lg shadow-lg'>
-            <div class='text-lg'>{{todo.title}}</div>
-            <div>{{todo.description}}</div>
-            <button (click)='showModal(this.todo)' class='bg-blue-300 p-3 rounded-lg'>View</button>
+        @for(todo of inProgressTodo; track todo) {
+          <div cdkDrag>
+            <div class='p-3 m-2 bg-red-100 rounded-lg shadow-lg'>
+              <div class='text-lg'>{{todo.title}}</div>
+              <div>{{todo.description}}</div>
+              <button (click)='showModal(this.todo)' class='bg-blue-300 p-3 rounded-lg'>View</button>
+            </div>
           </div>
-        </div>
+        }
       </div>
     </div>
 
@@ -36,15 +35,15 @@
         cdkDropList
         [cdkDropListData]="completedTodo"
         (cdkDropListDropped)="drop($event)">
-        <div
-          *ngFor="let todo of completedTodo"
-          cdkDrag
-        >
-          <div class='p-3 m-2 bg-red-100 rounded-lg shadow-lg'>
-            <div class='text-lg'>{{todo.title}}</div>
-            <div>{{todo.description}}</div>
+
+        @for(todo of completedTodo; track todo) {
+          <div cdkDrag>
+            <div class='p-3 m-2 bg-red-100 rounded-lg shadow-lg'>
+              <div class='text-lg'>{{todo.title}}</div>
+              <div>{{todo.description}}</div>
+            </div>
           </div>
-        </div>
+        }
       </div>
     </div>
 
@@ -67,9 +66,6 @@
         </div>
       </div>
     </div>
-
-
-
 
     <div class='w-full p-3'>
       <h1>Done</h1>

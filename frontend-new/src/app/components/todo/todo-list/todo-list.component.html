@@ -1,0 +1,33 @@
+
+<div cdkDropListGroup>
+  <div cdkDropList [cdkDropListData]='todos' class='bg-slate-50 m-2 rounded-lg shadow-lg p-1'>
+
+    @for(todo of todos; track todo.id){
+    <div cdkDrag class='bg-slate-200 m-2 rounded-lg shadow-lg p-2.5'>
+      <div>
+        {{todo.title}}
+      </div>
+      <div>
+        {{todo.description}}
+      </div>
+    </div>
+    }
+
+    <app-todo-create (todoCreated)='todoCreated()'></app-todo-create>
+  </div>
+
+  <div cdkDropList [cdkDropListData]='todos' class='bg-slate-50 m-2 rounded-lg shadow-lg p-1'>
+    @for(todo of todos; track todo.id){
+    <div cdkDrag class='bg-slate-200 m-2 rounded-lg shadow-lg p-2.5'>
+      <div>
+        {{todo.title}}
+      </div>
+      <div>
+        {{todo.description}}
+      </div>
+    </div>
+    }
+
+    <!-- <app-todo-create></app-todo-create> -->
+  </div>
+</div>
